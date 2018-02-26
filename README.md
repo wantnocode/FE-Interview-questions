@@ -86,7 +86,7 @@
     - [有一个大数组,var a = ['1', '2', '3', ...];a的长度是100,内容填充随机整数的字符串.请先构造此数组a,然后设计一个算法将其内容去重](#有一个大数组var-a-=-1-2-3-a的长度是100内容填充随机整数的字符串请先构造此数组a然后设计一个算法将其内容去重)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
+以上 出处https://github.com/qiu-deqing/FE-interview
 # FE-interview
 
 个人收集的前端知识点、面试题和答案，参考答案仅代表个人观点，方便复习，目录如下，通过文档内搜索目录可快速定位章节

@@ -62,7 +62,13 @@
     - [函数内部arguments变量有哪些特性,有哪些属性,如何将它转换为数组](#函数内部arguments变量有哪些特性有哪些属性如何将它转换为数组)
     - [DOM事件模型是如何的,编写一个EventUtil工具类实现事件管理兼容](#dom事件模型是如何的编写一个eventutil工具类实现事件管理兼容)
     - [评价一下三种方法实现继承的优缺点,并改进](#评价一下三种方法实现继承的优缺点并改进)
-  
+  - [$Vue概念部分](#$vue概念部分)
+    - [描述下什么MVVM?和MVC的区别是什么?](#MVVM介绍以及和MVC的区别)
+    - [vue组件之间的传值](#组件之间的传值)
+    - [Vue的双向数据绑定原理是什么？](#Vue的双向数据绑定原理)
+    - [请具体说下你对vue生命周期的理解?](#请具体说下你对vue生命周期的理解)
+    - [scss/less/Stylus是什么？在vue.cli中的安装使用步骤是？有哪几大特性?](#scss/less/Stylus 安装使用步骤 有哪几大特性)
+    - [说一些Vue的项目实践遇到的踩坑?](#Vue项目实践中所遇到的坑)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # FE-interview
@@ -1390,3 +1396,75 @@ function create(obj) {
 }
 ```
 
+## $Vue部分
+
+### MVVM介绍以及和MVC的区别
+
+1. MVVM是Model-View-ViewModel的缩写。MVVM是一种设计思想。Model 层代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑；View 代表UI 组件，它负责将数据模型转化成UI 展现出来，ViewModel 是一个同步View 和 Model的对象。在MVVM架构下，View 和 Model 之间并没有直接的联系，而是通过ViewModel进行交互，Model 和 ViewModel 之间的交互是双向的， 因此View 数据的变化会同步到Model中，而Model 数据的变化也会立即反应到View 上.ViewModel 通过双向数据绑定把 View 层和 Model 层连接了起来，而View 和 Model 之间的同步工作完全是自动的，无需人为干涉，因此开发者只需关注业务逻辑，不需要手动操作DOM, 不需要关注数据状态的同步问题，复杂的数据状态维护完全由 MVVM 来统一管理。
+
+2. 区别:原因就是mvc中Controller演变成mvvm中的viewModel mvc是DOM操作,MVVM(vue)演变为了数据驱动!
+
+### 组件之间的传值
+
+1. 父组件与子组件传值
+    父组件通过标签上面定义传值
+    子组件通过props方法接受数据
+2. 子组件向父组件传递数据
+    子组件通过$emit方法传递参数
+3. 同级组件通信
+    -把值赋值到一个公用的$vue实例上来访问
+    -Vuex
+    -父子组件联系(举例A组件与B组件有一个公共联系组件C A是C的子组件 B是C的子组件 让C起到桥接的作用)
+
+### Vue的双向数据绑定原理
+
+vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。
+
+具体步骤：
+
+1. 需要observe的数据对象进行递归遍历，包括子属性对象的属性，都加上 setter和getter,这样的话，给这个对象的某个值赋值，就会触发setter，那么就能监听到了数据变化
+
+2. compile解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图
+
+3. Watcher订阅者是Observer和Compile之间通信的桥梁，主要做的事情是:
+    1、在自身实例化时往属性订阅器(dep)里面添加自己
+    2、自身必须有一个update()方法
+    3、待属性变动dep.notice()通知时，能调用自身的update()方法，并触发Compile中绑定的回调，则功成身退。
+
+4. MVVM作为数据绑定的入口，整合Observer、Compile和Watcher三者，通过Observer来监听自己的model数据变化，通过Compile来解析编译模板指令，最终利用Watcher搭起Observer和Compile之间的通信桥梁，达到数据变化 -> 视图更新；视图交互变化(input) -> 数据model变更的双向绑定效果。
+
+### 请具体说下你对vue生命周期的理解
+
+总共分为8个阶段创建前/后，载入前/后，更新前/后，销毁前/后。
+
+1. 创建前/后： 在beforeCreated阶段，vue实例的挂载元素$el和数据对象data都为undefined，还未初始化。在created阶段，vue实例的数据对象data有了，$el还没有。
+2. 载入前/后：在beforeMount阶段，vue实例的$el和data都初始化了，但还是挂载之前为虚拟的dom节点，data.message还未替换。在mounted阶段，vue实例挂载完成，data.message成功渲染。
+3. 更新前/后：当data变化时，会触发beforeUpdate和updated方法。
+4. 销毁前/后：在执行destroy方法后，对data的改变不会再触发周期函数，说明此时vue实例已经解除了事件监听以及和dom的绑定，但是dom结构依然存在
+
+### scss/less/Stylus 安装使用步骤 有哪几大特性
+
+均是css的预编译。(suss为例描述,其他均出入不大)
+使用步骤：
+
+1. 用npm 下三个loader（sass-loader、css-loader、node-sass）
+2. 在build目录找到webpack.base.config.js，在那个extends属性中加一个拓展.scss
+3. 还是在同一个文件，配置一个module属性
+4. 然后在组件的style标签加上lang属性 ，例如：lang=”scss”
+
+有哪几大特性:
+
+1、可以用变量，例如（$变量名称=值）；
+2、可以用混合器，例如（）
+3、可以嵌套
+
+### Vue项目实践中所遇到的坑
+1. 路由变化页面数据不刷新问题
+2. setTimeout/setInterval(泛指异步回掉函数的this指向)this指向改变，无法用this访问VUe实例
+3. setInterval路由跳转继续运行并没有及时进行销毁
+4. vue 滚动行为用法,进入路由需要滚动到浏览器底部 头部等等
+5. 实现vue路由拦截浏览器的需求,进行 一系列操作 草稿保存等等
+6. v-once 只渲染元素和组件一次，优化更新渲染性能
+7. vue本地代理配置 解决跨域问题,仅限于开发环境
+8. 本地开发 没有任何问题 部署服务器 就404啊这些问题
+[具体问题的介绍,答案可以看我这篇文章](https://segmentfault.com/a/1190000013008420)

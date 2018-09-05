@@ -67,7 +67,7 @@
     - [vue组件之间的传值](#组件之间的传值)
     - [Vue的双向数据绑定原理是什么](#vue的双向数据绑定原理)
     - [请具体说下你对vue生命周期的理解?](#请具体说下你对vue生命周期的理解)
-    - [scss/less/Stylus是什么？在vue.cli中的安装使用步骤是？有哪几大特性?](#scss/less/Stylus.安装使用步骤.有哪几大特性)
+    - [scss/less/Stylus是什么？在vue.cli中的安装使用步骤是？有哪几大特性?](#scss/less/stylus.安装使用步骤.有哪几大特性)
     - [说一些Vue的项目实践遇到的踩坑?](#vue项目实践中所遇到的坑)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -1442,7 +1442,7 @@ vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Obj
 3. 更新前/后：当data变化时，会触发beforeUpdate和updated方法。
 4. 销毁前/后：在执行destroy方法后，对data的改变不会再触发周期函数，说明此时vue实例已经解除了事件监听以及和dom的绑定，但是dom结构依然存在
 
-### scss/less/Stylus.安装使用步骤.有哪几大特性
+### scss/less/stylus.安装使用步骤.有哪几大特性
 
 均是css的预编译。(suss为例描述,其他均出入不大)
 使用步骤：

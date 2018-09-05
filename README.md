@@ -63,12 +63,12 @@
     - [DOM事件模型是如何的,编写一个EventUtil工具类实现事件管理兼容](#dom事件模型是如何的编写一个eventutil工具类实现事件管理兼容)
     - [评价一下三种方法实现继承的优缺点,并改进](#评价一下三种方法实现继承的优缺点并改进)
   - [$Vue概念部分](#$vue概念部分)
-    - [描述下什么MVVM?和MVC的区别是什么?](#MVVM介绍以及和MVC的区别)
+    - [描述下什么MVVM?和MVC的区别是什么?](#MVVM介绍与MVC的区别)
     - [vue组件之间的传值](#组件之间的传值)
-    - [Vue的双向数据绑定原理是什么？](#Vue的双向数据绑定原理)
+    - [Vue的双向数据绑定原理是什么](#vue的双向数据绑定原理)
     - [请具体说下你对vue生命周期的理解?](#请具体说下你对vue生命周期的理解)
     - [scss/less/Stylus是什么？在vue.cli中的安装使用步骤是？有哪几大特性?](#scss/less/Stylus.安装使用步骤.有哪几大特性)
-    - [说一些Vue的项目实践遇到的踩坑?](#Vue项目实践中所遇到的坑)
+    - [说一些Vue的项目实践遇到的踩坑?](#vue项目实践中所遇到的坑)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # FE-interview
@@ -1398,7 +1398,7 @@ function create(obj) {
 
 ## $Vue部分
 
-### MVVM介绍以及和MVC的区别
+### MVVM介绍与MVC的区别
 
 1. MVVM是Model-View-ViewModel的缩写。MVVM是一种设计思想。Model 层代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑；View 代表UI 组件，它负责将数据模型转化成UI 展现出来，ViewModel 是一个同步View 和 Model的对象。在MVVM架构下，View 和 Model 之间并没有直接的联系，而是通过ViewModel进行交互，Model 和 ViewModel 之间的交互是双向的， 因此View 数据的变化会同步到Model中，而Model 数据的变化也会立即反应到View 上.ViewModel 通过双向数据绑定把 View 层和 Model 层连接了起来，而View 和 Model 之间的同步工作完全是自动的，无需人为干涉，因此开发者只需关注业务逻辑，不需要手动操作DOM, 不需要关注数据状态的同步问题，复杂的数据状态维护完全由 MVVM 来统一管理。
 
@@ -1416,7 +1416,7 @@ function create(obj) {
     -Vuex
     -父子组件联系(举例A组件与B组件有一个公共联系组件C A是C的子组件 B是C的子组件 让C起到桥接的作用)
 
-### Vue的双向数据绑定原理
+### vue的双向数据绑定原理
 
 vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。
 
@@ -1458,7 +1458,7 @@ vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Obj
 2、可以用混合器，例如（）
 3、可以嵌套
 
-### Vue项目实践中所遇到的坑
+### vue项目实践中所遇到的坑
 1. 路由变化页面数据不刷新问题
 2. setTimeout/setInterval(泛指异步回掉函数的this指向)this指向改变，无法用this访问VUe实例
 3. setInterval路由跳转继续运行并没有及时进行销毁

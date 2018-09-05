@@ -67,7 +67,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # FE-interview
 
-个人收集的前端知识点、面试题和答案，参考答案仅代表个人观点，方便复习，目录如下，通过文档内搜索目录可快速定位章节
+个人收集的前端知识点、面试题和答案，参考答案仅代表个人观点，方便复习，目录如下:
 
 ## HTML， HTTP，web综合问题
 

@@ -17,7 +17,7 @@
     - [如何进行网站性能优化](#如何进行网站性能优化)
     - [什么是渐进增强](#什么是渐进增强)
     - [HTTP状态码及其含义](#http状态码及其含义)
-    - [HTTPS工作原理](#HTTPS工作原理)
+    - [HTTPS工作原理](#HTTPS工作原理?)
   - [$CSS部分](#$css部分)
     - [CSS选择器有哪些](#css选择器有哪些)
     - [css sprite是什么,有什么优缺点](#css-sprite是什么有什么优缺点)
@@ -384,7 +384,7 @@ Content-Type: text/html; charset=iso-8859-1
     - **504 Gateway Timeout**:  web 服务器网关超时
     - **505 HTTP Version Not Supported**: HTTP版本不支持
 
-### HTTPS工作原理
+### HTTPS工作原理?
 
 1. 首先HTTP请求服务端生成证书,客户端对证书的有效期、合法性、域名是否与请求的域名一致、证书的公钥（RSA加密）等进行校验;
 2. 客户端如果校验通过后，就根据证书的公钥的有效， 生成随机数，随机数使用公钥进行加密（RSA加密;

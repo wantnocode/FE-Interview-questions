@@ -69,7 +69,10 @@
     - [请具体说下你对vue生命周期的理解?](#请具体说下你对vue生命周期的理解)
     - [scss/less/Stylus是什么？在vue.cli中的安装使用步骤是？有哪几大特性?](#css预编译安装使用步骤有哪几大特性)
     - [说一些Vue的项目实践遇到的踩坑?](#vue项目实践中所遇到的坑)
-
+  - [$前端自动化](#$vue概念部分)
+    - [大概描述一下webpack,gulp,grunt的区别](#描述一下webpack/gulp/grunt的区别)
+    - [描述一下webpack,gulp,grunt的优缺点](#描述一下webpack/gulp/grunt的优缺点)
+    
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # FE-interview
 
@@ -1468,3 +1471,29 @@ vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Obj
 7. vue本地代理配置 解决跨域问题,仅限于开发环境
 8. 本地开发 没有任何问题 部署服务器 就404啊这些问题
 [具体问题的介绍,答案可以看我这篇文章](https://segmentfault.com/a/1190000013008420)
+
+
+## 前端自动化编译部分(webpack,Gulp,Grunt)
+
+### 描述一下webpack/gulp/grunt的区别
+    工作内容:
+    Webpack间接可以看作模块打包机，通过分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss,TypeScript,es6/7等），并将其编译或打包为合适的格式供浏览器使用。
+    Gulp/Grunt是一种能够优化前端的开发流程的工具，而WebPack是一种模块化的解决方案，不过Webpack的优点使得Webpack在很多场景下可以替代Gulp/Grunt类的工具
+    工作方式(方法):
+    Webpack:把你的项目当做一个整体，通过一个给定文件(如：index.js),Webpack将从这个文件开始找到你的项目的所有依赖文件,使用loaders处理它们，最后打包为一个（或多个）浏览器可识别的JavaScript文件。
+    Grunt和Gulp：在一个配置文件中，指明对某些文件进行类似编译，组合，压缩等任务的具体步骤，工具之后可以自动替你完成这些任务。
+
+
+### 描述一下webpack/gulp/grunt的优缺点
+[Grunt官网](https://www.gruntjs.net/getting-started)
+    grunt是针对js任务管理工具,构建工具
+    优势：出来早 社区成熟  插件全  
+    缺点：配置复杂   效率低 (cpu占用率高)
+[Gulp官网](https://gulpjs.com/)
+    gulp 基于流的自动化构建工具    
+    优点：配置简单 效率高 流式工作（把输入的某些东西,经过某个管道处理后,输出需要的形式。）  
+    缺点：出现晚  插件少
+[webpack官网](https://webpack.github.io/)
+    webpack 模块打包机    
+    优点：模块化 
+    缺点：配置复杂 (中文文档不是特别齐全 算不算缺点- -。)

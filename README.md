@@ -1523,6 +1523,4 @@ vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Obj
 8. 压缩css         gulp-cssmin
 9. 压缩html        gulp-htmlmin
 10. 压缩img        gulp-imagemin
-
-#### 对这些的使用例子我会在另一个仓库完善:
-1. [编程仓库,猛戳](#https://github.com/Xieguoiang/Full-Stack-Programming)
+11. [以上使用例子在编程仓库,猛戳](#https://github.com/Xieguoiang/Full-Stack-Programming)

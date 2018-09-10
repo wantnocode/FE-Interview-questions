@@ -72,6 +72,8 @@
   - [$前端自动化](#$前端自动化)
     - [大概描述一下webpack,gulp,grunt的区别](#描述一下webpack/gulp/grunt的区别)
     - [描述一下webpack,gulp,grunt的优缺点](#描述一下webpack.gulp.grunt的优缺点)
+    - [说一下gulp的四大核心方法](#简单描述一下gulp的四大核心方法)
+    - [简单列举一些gulp的插件](#gulp的插件有哪些)
     
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # FE-interview
@@ -1502,3 +1504,25 @@ vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Obj
    3. 缺点：配置复杂 (中文文档不是特别齐全 算不算缺点- -。) 
 
 
+### 简单描述一下gulp的四大核心方法
+1. task() : 执行的任务 
+2. src() : 输入的文件 (源自哪个文件)
+3. pipe() : 执行的管道方法，接在源后面或者其他管道后面 
+4. dest() : 输出的位置
+
+
+### gulp的插件有哪些
+
+1. 检查(检测)js    gulp-jshint
+2. scss => css     gulp-sass
+3. jsx => js       gulp-react
+4. es6 => es5      gulp-babel
+5. 文件拷贝        gulp-copy
+6. 文件合并        gulp-concat
+7. 压缩js          gulp-uglify
+8. 压缩css         gulp-cssmin
+9. 压缩html        gulp-htmlmin
+10. 压缩img        gulp-imagemin
+
+#### 对这些的使用例子我会在另一个仓库完善:
+[编程仓库,猛戳](#https://github.com/Xieguoiang/Full-Stack-Programming)

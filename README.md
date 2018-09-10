@@ -1485,15 +1485,18 @@ vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Obj
 
 
 ### 描述一下webpack/gulp/grunt的优缺点
-[Grunt官网](https://www.gruntjs.net/getting-started)
-grunt是针对js任务管理工具,构建工具
+1.grunt是针对js任务管理工具,构建工具
 优势：出来早 社区成熟  插件全  
-缺点：配置复杂   效率低 (cpu占用率高)
-[Gulp官网](https://gulpjs.com/)
-gulp 基于流的自动化构建工具    
+缺点：配置复杂   效率低 (cpu占用率高) 
+[Grunt官网](https://www.gruntjs.net/getting-started)
+
+2. gulp 基于流的自动化构建工具    
 优点：配置简单 效率高 流式工作（把输入的某些东西,经过某个管道处理后,输出需要的形式。）  
 缺点：出现晚  插件少
-[webpack官网](https://webpack.github.io/)
-webpack 模块打包机    
+[Gulp官网](https://gulpjs.com/)
+
+3.webpack 模块打包机    
 优点：模块化 
-缺点：配置复杂 (中文文档不是特别齐全 算不算缺点- -。)
+缺点：配置复杂 (中文文档不是特别齐全 算不算缺点- -。) 
+[webpack官网](https://webpack.github.io/)
+

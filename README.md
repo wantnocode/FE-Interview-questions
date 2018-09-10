@@ -71,7 +71,7 @@
     - [说一些Vue的项目实践遇到的踩坑?](#vue项目实践中所遇到的坑)
   - [$前端自动化](#$前端自动化)
     - [大概描述一下webpack,gulp,grunt的区别](#描述一下webpack/gulp/grunt的区别)
-    - [描述一下webpack,gulp,grunt的优缺点](#描述一下webpack/gulp/grunt的优缺点)
+    - [描述一下webpack,gulp,grunt的优缺点](#描述一下webpack.gulp.grunt的优缺点)
     
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # FE-interview
@@ -1477,14 +1477,14 @@ vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Obj
 
 ### 描述一下webpack/gulp/grunt的区别
 1. 工作内容:
-    Webpack间接可以看作模块打包机，通过分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss,TypeScript,es6/7等），并将其编译或打包为合适的格式供浏览器使用。
-    Gulp/Grunt是一种能够优化前端的开发流程的工具，而WebPack是一种模块化的解决方案，不过Webpack的优点使得Webpack在很多场景下可以替代Gulp/Grunt类的工具
+     1. Webpack间接可以看作模块打包机，通过分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss,TypeScript,es6/7等），并将其编译或打包为合适的格式供浏览器使用。
+     2. Gulp/Grunt是一种能够优化前端的开发流程的工具，而WebPack是一种模块化的解决方案，不过Webpack的优点使得Webpack在很多场景下可以替代Gulp/Grunt类的工具
 2. 工作方式(方法):
-    Webpack:把你的项目当做一个整体，通过一个给定文件(如：index.js),Webpack将从这个文件开始找到你的项目的所有依赖文件,使用loaders处理它们，最后打包为一个（或多个）浏览器可识别的JavaScript文件。
-    Grunt和Gulp：在一个配置文件中，指明对某些文件进行类似编译，组合，压缩等任务的具体步骤，工具之后可以自动替你完成这些任务。
+     1. Webpack:把你的项目当做一个整体，通过一个给定文件(如：index.js),Webpack将从这个文件开始找到你的项目的所有依赖文件,使用loaders处理它们，最后打包为一个（或多个）浏览器可识别的JavaScript文件。
+     2. Grunt和Gulp：在一个配置文件中，指明对某些文件进行类似编译，组合，压缩等任务的具体步骤，工具之后可以自动替你完成这些任务。
 
 
-### 描述一下webpack/gulp/grunt的优缺点
+### 描述一下webpack.gulp.grunt的优缺点
 1. [Grunt官网](https://www.gruntjs.net/getting-started)
    1. grunt是针对js任务管理工具,构建工具
    2. 优势：出来早 社区成熟  插件全  

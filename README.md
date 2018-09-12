@@ -74,6 +74,7 @@
     - [描述一下webpack,gulp,grunt的优缺点](#描述一下webpack.gulp.grunt的优缺点)
     - [说一下gulp的四大核心方法](#简单描述一下gulp的四大核心方法)
     - [简单列举一些gulp的插件](#gulp的插件有哪些)
+    - [大致描述一下webpack的概念有些什么,分别的含义](#webpack的基本概念及含义)
     
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 # FE-interview
@@ -1524,3 +1525,16 @@ vue.js 是采用数据劫持结合发布者-订阅者模式的方式，通过Obj
 9. 压缩html        gulp-htmlmin
 10. 压缩img        gulp-imagemin
 #### [以上使用例子在编程仓库,猛戳](https://github.com/Xieguoiang/Full-Stack-Programming)
+
+### webpack的基本概念
+
+1. 入口(entry)
+入口起点(entry point)指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始。进入入口起点后，webpack 会找出有哪些模块和库是入口起点（直接和间接）依赖的。
+2. 出口(output)
+output 属性告诉 webpack 在哪里输出它所创建的 bundles,以及如何命名这些文件，默认值为 ./dist。基本上，整个应用程序结构，都会被编译到你指定的输出路径的文件夹中。
+3. loader (可以理解为编译器)
+loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。
+4. 插件(plugins)
+插件则可以用于执行范围更广的任务。插件的范围包括，从打包优化和压缩，一直到重新定义环境中的变量。插件接口功能极其强大，可以用来处理各种各样的任务.
+5. 模式(mode)
+通过配置mode参数可以启用相应模式下的 webpack 内置的优化,其中有 development (开发)或 production (生产/上线) 俩种模式

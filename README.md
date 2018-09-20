@@ -1,5 +1,6 @@
 ## 前端问题的总结 (本仓库=>知识点定义的文字描述,不涉及编程)
-## 编程篇总结会更新到另外一个仓库 [编程](https://github.com/Xieguoiang/Full-Stack-Programming)
+## 编程系列的总结和学习会更新到另外一个仓库 [编程](https://github.com/Xieguoiang/Full-Stack-Programming)
+
 
 - [FE-interview](#fe-interview)
   - [HTML， HTTP，web综合问题](#$html，-http，web综合问题)
